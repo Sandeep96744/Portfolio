@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sandeep Sharma</title>
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/31dbbdf38e.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div id="preloader"></div>
+    <script type="text/javascript">
+        var loader;
+
+        function loadNow(opacity) {
+            if(opacity <= 0) {
+                displayContent();
+            } 
+            else {
+                loader.style.opacity = opacity;
+                window.setTimeout(function() {
+                    loadNow(opacity - 0.7)
+                }, 100);
+            }
+        }  
+
+        function displayContent() {
+            loader.style.display = 'none';
+            document.getElementById('header').style.display = 'block';
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            loader = document.getElementById('preloader');
+            loadNow(10);
+        });
+    </script>
+    <!-- -------Home------- -->
+    <div id="header">
+        <div class="container">
+            <nav>
+                <Strong class="note"><span class="port-color">Portf</span>olio.</Strong>
+                <ul id="side-menu">
+                    <li><a href="#header" onclick="closemenu()">Home</a></li>
+                    <li><a href="#about" onclick="closemenu()">About</a></li>
+                    <li><a href="#interests" onclick="closemenu()">Interests</a></li>
+                    <li><a href="#contact" onclick="closemenu()">Contact Us</a></li>
+                    <i class="fa-solid fa-xmark close" onclick="closemenu()"></i>
+                </ul>
+                <i class="fa-solid fa-ellipsis-vertical menu" onclick="openmenu()"></i>
+            </nav>
+            <div class="header-text">
+                <h1>Hello! I'm <span>Sandeep.</span></h1>
+                <h2>A <span class="auto-type"></span></h2>
+            </div>
+        </div>
+    </div>
+    <script>
+        var sidemenu = document.getElementById("side-menu");
+
+        function openmenu() {
+            sidemenu.style.right = "0";
+        }
+        function closemenu() {
+            sidemenu.style.right = "100%";
+        }
+    </script>
+    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+    <script>
+        var typed = new Typed('.auto-type', {
+            strings: ['Developer.', 'Programmer.', 'Rover.', 'Foodie.'], 
+            typeSpeed: 150,
+            backSpeed: 50, 
+            loop: true
+        });
+    </script>
+    <!-- ---------About--------- -->
+
+    <div id="about">
+        <div class="container">
+            <div class="row">
+                <div class="about-col-1">
+                    <img src="images/img.jpg" alt="Please Refresh!">
+                </div>
+
+                <div class="about-col-2">
+                    <h1 class="sub-title">About Me</h1>
+                    <p class="about-note">Hello Guys, I'm Sandeep Sharma, a Computer Science student from India. I love to code and solve problems through my code. I enjoy learning new technologies alongside to boost my knowledge and skills.</p>
+                    
+                    
+                    <div class="tab-titles">
+                        <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                        <p class="tab-links" onclick="opentab('education')">Education</p>
+                        <p class="tab-links" onclick="opentab('projects')">Projects</p>
+                    </div>
+
+                    <div class="tab-contents active-tab" id="skills">
+                        <ul>
+                            <li><span>Web Developement</span><br>Front-End Developement</li>
+                            <li><span>Problem Solving</span><br>Languages: Java, C, C++</li>
+                            <li><span>IT Constructs</span><br>Data Structures & Algorithms, OOP, DBMS</li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="education">
+                        <ul>
+                            <li><span>Computer Science Engineer</span><br>Govt. College of Engineering & Ceramic Technology.<br>Year: 2019 - 2023<br>Marks: 9.66 (CGPA)</li>
+                            <li><span>Higher Secondary Education</span><br>St. Sebastian's School.<br>Year: 2018<br>Marks: 85.8%</li>
+                            <li><span>Secondary Education</span><br>St. Sebastian's School.<br>Year: 2016<br>Marks: 89.66%</li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="projects">
+                        <ul>
+                            <li><span>To-Do App</span><br>HTML | CSS | JS | Firebase<br>-- Has ability to create new tasks.<br>-- Perform editing, deleting and marking tasks as done.</li>
+                            <li><span>Tic-Tac-Toe</span><br>HTML | CSS | JS<br>-- A 2-player game to challenge your friends and test your strategic skills.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        var tablinks = document.getElementsByClassName("tab-links");
+        var tabcontents = document.getElementsByClassName("tab-contents");
+        function opentab(tabname) {
+            for(tablink of tablinks) {
+                tablink.classList.remove("active-link");
+            }
+            for(tabcontent of tabcontents) {
+                tabcontent.classList.remove("active-tab");
+            }
+            event.currentTarget.classList.add("active-link");
+            document.getElementById(tabname).classList.add("active-tab");
+        }        
+    </script>
+
+    <!-- ---------Interests--------- -->
+    <div id="interests">
+        <div class="container">
+            <h1 class="sub-title sub-title-interest">My Interests</h1>
+            <div class="interests-list">
+                <div class="interest-grid">
+                    <i class="fa-brands fa-java fa-beat"></i>
+                    <h2>Core Java</h2>
+                    <p>The first programming language I learnt and mastered it's basics. Learning the advanced part of it.</p>
+                </div> 
+                <div class="interest-grid">
+                    <i class="fa-solid fa-gear fa-shake"></i>
+                    <h2>Problem Solving</h2>
+                    <p>Solving problems is what programmers do the best, and I love doing it too!</p>
+                </div> 
+                <div class="interest-grid">
+                    
+                    <i class="fa-solid fa-code fa-beat"></i>
+                    <h2>Competitive Programming</h2>
+                    <p>Taking part in short competitive programming contests is something that excites me!</p>
+                </div>                
+            </div>
+        </div>
+    </div>
+    
+    <div id="contact">
+        <div class="container">
+            <h1 class="sub-title sub-title-contact">Contact Me</h1>
+            <div class="row">
+                <div class="contact-left">
+                    <p class="contact-text">Get in Touch<br>Interested to know more about me and solving problems together?<br><br>         
+                    Coding along with a sip of Coffee☕! Sounds good to me, what about you? Feel free to connect for any kind of Coding help...
+                    <br><br>I'm always ready @ your service!</p>
+                    <p><i class="fa-solid fa-user atag"></i>Sandeep Sharma</p>
+                    <p><i class="fa-solid fa-envelope atag"></i><a class="mail" href="">sandeepsharma96744@gmail.com</a></p>
+                    <p><i class="fa-solid fa-location-dot atag"></i>Kolkata, India</p>
+                    <p></p>
+                    <div class="social-icons">
+                        <a href="https://www.facebook.com/profile.php?id=100013116736758" class="atag"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="https://www.instagram.com/sandeep96744/" class="atag"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="https://www.linkedin.com/in/sandeep-sharma-7b9b85137" class="atag"><i class="fa-brands fa-linkedin"></i></a>
+                        <a href="https://t.me/shreyasiam" class="atag"><i class="fa-brands fa-telegram"></i></a>
+                    </div>
+                    <a href="images/sandeep.pdf" download="" class="download-btn">Download CV</a>
+                </div>
+                <div class="contact-right">
+                    <form action="" class="input-area" name="submit-to-google-sheet">
+                        <input class="input-1 input" type="text" name="Name" placeholder="Name" required>
+                        <input class="input-2 input" type="email" name="Email" placeholder="Email" required>
+                        <textarea class="text-area" name="Message" id="" cols="" rows="9" placeholder="Type your message here..."></textarea>
+                        <button type="submit" class="submit-btn">Submit</button>
+                        <span id="msg"></span>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>Copyright © Sandeep 2023. I'm Loving it!❤️</p>
+        </div>
+    </div>
+    <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbxNQRvQWBiRWgP-58bXqnmu-6W4nkVO1a4bMudLBmiRBlmGPhMW3q9ZbzYNCGiugf-a/exec'
+        const form = document.forms['submit-to-google-sheet']
+        const msg = document.getElementById("msg")
+      
+        form.addEventListener('submit', e => {
+          e.preventDefault()
+          fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+            .then(response => {
+                msg.innerHTML = "Sent Successfully"
+                setTimeout(function() {
+                    msg.innerHTML = ""
+                }, 3000)
+                form.reset()
+            })
+            .catch(error => console.error('Error!', error.message))
+        })
+      </script>
+</body>
+</html>
