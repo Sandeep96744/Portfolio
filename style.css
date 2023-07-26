@@ -298,6 +298,7 @@ nav ul li a:hover::after {
     background: #ff004f;
     font-size: 18px;
     transition: transform 0.3s;
+    cursor: pointer;
     
 }
 
